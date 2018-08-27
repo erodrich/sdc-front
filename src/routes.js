@@ -3,6 +3,7 @@ import Campaign from './components/campaigns/Campaign.vue';
 import CampaignStart from './components/campaigns/CampaignStart.vue';
 import CampaignDetail from './components/campaigns/CampaignDetail.vue';
 import AdDetail from './components/ad/AdDetail.vue';
+import CampaignForm from './components/campaigns/CampaignForm.vue'; 
 
 export const routes = [
     {
@@ -15,7 +16,8 @@ export const routes = [
             default: Campaign
         },
         children: [
-            {path: '', component: CampaignStart},
+            {path: '', name: 'campaigns', component: CampaignStart},
+            {path: 'new', name: 'campaignForm', component: CampaignForm},
             {path: ':id', name: "detail", component: CampaignDetail},
             {path: ':id/ads/:ad', name: "ad", component: AdDetail}
             

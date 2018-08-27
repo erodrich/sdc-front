@@ -2,7 +2,9 @@
     <div>
         <div class="page-header">
             <h1>Campañas</h1>
+            <button class="btn btn-primary" @click="showForm()">Añadir</button>
         </div>
+
         <table class="table table-striped">
             <thead>
                 <th>Nombre</th>
@@ -63,6 +65,9 @@ export default {
               this.campaigns.push(campaign);  
               this.setCampaign(campaign);      
           }
+      },
+      showForm(){
+          return this.$router.push({name: 'campaignForm'});
       }
       
   }
