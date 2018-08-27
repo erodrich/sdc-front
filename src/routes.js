@@ -2,7 +2,7 @@ import Home from './components/Home.vue';
 import Campaign from './components/campaigns/Campaign.vue';
 import CampaignStart from './components/campaigns/CampaignStart.vue';
 import CampaignDetail from './components/campaigns/CampaignDetail.vue';
-import Ad from './components/ad/AdDetail.vue';
+import AdDetail from './components/ad/AdDetail.vue';
 
 export const routes = [
     {
@@ -16,10 +16,9 @@ export const routes = [
         },
         children: [
             {path: '', component: CampaignStart},
-            {path: ':id', name: "detail", component: CampaignDetail,
-        children: [
-            {path: 'ads/:ad', name: "anuncio", component: Ad}
-        ] }
+            {path: ':id', name: "detail", component: CampaignDetail},
+            {path: ':id/ads/:ad', name: "ad", component: AdDetail}
+            
         ]
     },
     

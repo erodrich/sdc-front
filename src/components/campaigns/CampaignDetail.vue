@@ -3,7 +3,7 @@
         <div class="panel panel-info">
             <div class="panel-heading">
                 <div class="panel-title">
-                    <h4>{{campaign.name}}</h4>
+                    <h4>{{ campaign.name }}</h4>
                 </div>
             </div>
             <div class="panel-body">
@@ -11,7 +11,7 @@
                 <br/>
                 Fecha Fin: {{campaign.endDate}}
                 <br/>
-                Estado: {{ (campaign.active == 1) ? 'Activo' : 'No activo'}}
+                Estado:{{ (campaign.active == 1) ? 'Activo' : 'No activo'}}
             </div>
         </div>
         <div class="panel panel-info">
@@ -24,14 +24,12 @@
                 <ol>
                     <template v-for="ad in ads">
                         <router-link 
-                        :to="{ name: 'anuncio', params:  
+                        :to="{ name: 'ad', params:  
                             {ad: ad.id} }" 
-                        tag="li" 
-                        :ad="ad"
+                        tag="li"
                         :key="ad.id">
                         <a>{{ad.title}}</a></router-link>
                     </template>
-                    
                 </ol>
             </div>
         </div>
@@ -40,23 +38,17 @@
 </template>
 <script>
 import Vue from 'vue';
-import {mapActions} from 'vuex';
-import {mapGetters} from 'vuex';
 
 export default {
     data(){
         return {
-            ads: [],
-            ad: {
-                id: '',
-                title: '',
-                subtitle: ''
-            }
+            campaign: '',
+            ads: []
         }
     },
     created(){
-      this.fetchAds();
-      console.log("Campaña: " + camp);
+        this.fetchCampaign();
+        this.fetchAds();
     },
     methods: {
         fetchCampaign(){
@@ -71,8 +63,8 @@ export default {
                     endDate: res.data.attributes.end_date,
                     active: (res.data.attributes.active == 1) ? 'Activo' : 'No activo',
                 }
+                this.campaign = campaign;
             }));
-            this.campaign = campaign;
         },
         fetchAds(){
             Vue.http.get("clients/2/campaigns/" + this.$route.params.id + "/ads")
@@ -87,9 +79,13 @@ export default {
               const ad = {
                   id: data[i].id,
                   title: data[i].attributes.title,
-                  subtitle: data[i].attributes.subtitle
+                  subtitle: data[i].attributes.subtitle,
+                  imageFullName: data[i].attributes.image_full_name,
+                  imageFullUrl: data[i].attributes.image_full_url,
+                  imagePreName: data[i].attributes.image_pre_name,
+                  imagePreUrl: data[i].attributes.image_pre_url,
               }
-              this.ads.push(ad);    
+              this.ads.push(ad);   
             }
         }
     }

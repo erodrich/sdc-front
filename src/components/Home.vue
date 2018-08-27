@@ -1,6 +1,9 @@
 <template>
     <div class="col-sm-8">
-        <h1>Sistema de Distribucion de Contenido</h1>
+        <div class="page-header">
+            <h1>DigiCoupon</h1>
+            <p>Crea campañas, añade anuncios y asocialos a tus beacons. Seduce a tu público con nuestro sistema.</p>
+        </div>
         <ul>
             <router-link to='/campaigns'>Campañas</router-link>
         </ul>

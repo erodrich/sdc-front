@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <h1>Campaña</h1>
-        <hr>
+    <div class="col-sm-6">
         <router-view></router-view>
     </div>
 </template>

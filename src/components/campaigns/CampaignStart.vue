@@ -1,5 +1,8 @@
 <template>
     <div>
+        <div class="page-header">
+            <h1>Campañas</h1>
+        </div>
         <table class="table table-striped">
             <thead>
                 <th>Nombre</th>
