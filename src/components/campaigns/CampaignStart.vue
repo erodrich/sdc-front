@@ -1,8 +1,13 @@
 <template>
     <div>
-        <div class="page-header">
+        <div class="container-fluid">
+        <div class="page-header m-2">
             <h1>Campañas</h1>
-            <button class="btn btn-primary" @click="showForm()">Añadir</button>
+            <ul class="nav nav-pills">
+                <li class="nav-item">
+                    <a class="nav-link" href="#" @click="showForm()">Añadir</a>
+                </li>
+            </ul>
         </div>
 
         <table class="table table-striped">
@@ -21,10 +26,15 @@
                     <td>{{campaign.startDate}}</td>
                     <td>{{campaign.endDate}}</td>
                     <td>{{campaign.active}}</td>
+                    <td>
+                        <a href="#" class="btn btn-primary">
+                            <span data-feather="edit">Edit</span>        
+                        </a>
+                    </td>
                 </tr>
             </tbody>
-                
         </table>
+        </div>
     </div>
 </template>
 <script>

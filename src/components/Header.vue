@@ -1,31 +1,21 @@
 <template>
     <div>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                <router-link to="/" class="navbar-brand">DigiCoupon</router-link>
+        <nav class="navbar navbar-expand navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">DigiCoupon</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                <a class="nav-item nav-link" href="/campaigns">Campañas</a>
+                <a class="nav-item nav-link" href="#">Beacons</a>
+                <a class="nav-item nav-link" href="#">Ajustes</a>
                 </div>
+            </div>  
+        </div>
+            
 
-                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                
-                <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">End Day</a></li>
-                    <li class="dropdown" :class="{open: isDropDownOpen}" @click="isDropDownOpen = !isDropDownOpen">
-                    <a 
-                        href="#" 
-                        class="dropdown-toggle" 
-                        data-toggle="dropdown" 
-                        role="button" 
-                        aria-haspopup="true" 
-                        aria-expanded="false">Save & Load <span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#">Save</a></li>
-                        <li><a href="#">Load</a></li>
-                    </ul>
-                    </li>
-                </ul>
-                </div><!-- /.navbar-collapse -->
-            </div><!-- /.container-fluid -->
         </nav>
     </div>
 </template>

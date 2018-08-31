@@ -1,24 +1,32 @@
 <template>
-    <div>
-        <div class="panel panel-info">
-            <div class="panel-heading">
+    <div class="container">
+        <div class="card m-2">
+            <div class="card-header">
                 <div class="panel-title">
                     <h4>{{ campaign.name }}</h4>
                 </div>
             </div>
-            <div class="panel-body">
-                Fecha Inicio: {{campaign.startDate}}
-                <br/>
-                Fecha Fin: {{campaign.endDate}}
-                <br/>
-                Estado:{{ (campaign.active == 1) ? 'Activo' : 'No activo'}}
+            <div class="card-body">
+                <ul class="list-group col-4 float-left">
+                    <li class="list-group-item list-group-item-info">Fecha inicio:</li>
+                    <li class="list-group-item">{{campaign.startDate}}</li>
+                </ul>
+                <ul class="list-group col-4 float-left">
+                    <li class="list-group-item list-group-item-info">Fecha fin:</li>
+                    <li class="list-group-item">{{campaign.endDate}}</li>
+                </ul>
+                <ul class="list-group col-4 float-left">
+                    <li class="list-group-item list-group-item-info">Estado:</li>
+                    <li class="list-group-item">{{ (campaign.active == 1) ? 'Activo' : 'No activo'}}</li>
+                </ul>
             </div>
         </div>
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <div class="panel-title">
+        <div class="card m-2">
+            <div class="card-header">
+                <div class="card-title">
                     <h4>Anuncios:</h4>
                 </div>
+                <button class="btn btn-primary" >Añadir anuncio</button>
             </div>
             <div class="panel-body">
                 <ol>
@@ -33,7 +41,6 @@
                 </ol>
             </div>
         </div>
-
     </div>
 </template>
 <script>

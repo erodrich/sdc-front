@@ -1,4 +1,6 @@
+
 import Home from './components/Home.vue';
+import Login from './components/Login.vue';
 import Campaign from './components/campaigns/Campaign.vue';
 import CampaignStart from './components/campaigns/CampaignStart.vue';
 import CampaignDetail from './components/campaigns/CampaignDetail.vue';
@@ -9,6 +11,11 @@ export const routes = [
     {
         path: '/',
         component: Home
+    },
+    {
+        path: '/login',
+        name: 'login',
+        component: Login
     },
     {
         path: '/campaigns',

@@ -1,13 +1,13 @@
 <template>
-    <div>
-        <h3>{{campaign.name}}</h3>
-        <div class="panel panel-info">
-            <div class="panel-heading">
-                <div class="panel-title">
+    <div class="container">
+        <h3 class="h3">{{campaign.name}}</h3>
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
                     <h4>Anuncio</h4>
                 </div>
             </div>
-            <div class="panel-body">
+            <div class="card-body">
                 <ul>
                     <li><strong>Título: </strong> {{ad.title}}</li>
                     <li><strong>Subtítulo: </strong> {{ad.subtitle}}</li>
