@@ -39,10 +39,30 @@
     </div>
 </template>
 <script>
+import Vue from 'vue';
+
 export default {
+    data (){
+        return {
+            campaign: {
+                name: '',
+                start_date: '',
+                end_date: '',
+                active: 1,
+                client_id: 2
+            }
+        }
+    },
     methods: {
       back(){
           return this.$router.push({name: 'campaigns'});
+      },
+      save(){
+          console.log("Campaign: " + this.campaign.name);
+          Vue.http.post('campaigns', this.campaign)
+          .then(response => {
+                console.log(response.data);
+            });
       }
     }
 }
